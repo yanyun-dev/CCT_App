@@ -36,3 +36,4 @@ cct_app\main.o: ../Inc/tim.h
 cct_app\main.o: ../Inc/usart.h
 cct_app\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 cct_app\main.o: ../Inc/gpio.h
+cct_app\main.o: ..\Inc\amc\tuya_ble.h

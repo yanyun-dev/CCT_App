@@ -34,3 +34,4 @@ cct_app\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 cct_app\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 cct_app\usart.o: ../Inc/gpio.h
 cct_app\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h
+cct_app\usart.o: ..\Inc\amc\tuya_ble.h

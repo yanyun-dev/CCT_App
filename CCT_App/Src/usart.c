@@ -40,6 +40,7 @@
 /* USER CODE BEGIN 0 */
 #include "stdarg.h"
 #include "stm32f1xx_hal.h"
+#include "tuya_ble.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -192,7 +193,26 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 /* USER CODE BEGIN 1 */
 void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
 {
+	if(huart == MAIN_COMM_SERIAL)
+	{
+		ble_package_error_process();
+	}
+	else if(huart == DEBUG_COMM_SERIAL)
+	{
 	
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if(huart == MAIN_COMM_SERIAL)
+	{
+		ble_package_receive_cpl_cb();
+	}
+	else if(huart == DEBUG_COMM_SERIAL)
+	{
+	
+	}
 }
 
 void iprintf(char *fmt,...) 

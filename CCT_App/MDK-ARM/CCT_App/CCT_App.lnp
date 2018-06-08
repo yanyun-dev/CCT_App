@@ -25,6 +25,8 @@
 "cct_app\stm32f1xx_hal_pwr.o"
 "cct_app\stm32f1xx_hal_flash.o"
 "cct_app\system_stm32f1xx.o"
+"cct_app\cct_state.o"
+"cct_app\tuya_ble.o"
 --library_type=microlib --strict --scatter "CCT_App\CCT_App.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
