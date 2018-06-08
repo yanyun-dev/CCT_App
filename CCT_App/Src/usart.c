@@ -38,7 +38,8 @@
 #include "gpio.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "stdarg.h"
+#include "stm32f1xx_hal.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -189,7 +190,23 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
+{
+	
+}
 
+void iprintf(char *fmt,...) 
+{
+	va_list ap;				                          //define char* type and pointert to read valiable value
+	uint8_t buf[128];
+  int len;
+  
+  va_start(ap,fmt);		                        //calculate start address for fmt
+	len = vsprintf(buf,fmt,ap);                 //save data form fmt to buf buffer
+	va_end(ap);				                          //end
+//  cdcSend2Host((uint8_t *)buf,(uint16_t)len); //send	
+	DebugComm_SendString(&buf[0]);
+}
 /* USER CODE END 1 */
 
 /**

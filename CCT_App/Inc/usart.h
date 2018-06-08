@@ -43,13 +43,39 @@
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "string.h"
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN Private defines */
+#define MAIN_COMM_SERIAL (&huart1)
+#define DEBUG_COMM_SERIAL (&huart2)
+	 
+	 
+#define MainComm_SendString(string) do { \
+	uint8_t* _s = string; \
+	while(*_s++ != '\0') { \
+		HAL_USART_Transmit_IT(MAIN_COMM_SERIAL, _s, 1, 0); \
+	} \
+}while(0)
+
+#define DebugComm_SendString(string) do { \
+	uint8_t* _s = string; \
+	while(*_s++ != '\0') { \
+		HAL_UART_Transmit(DEBUG_COMM_SERIAL, _s, 1, 0); \
+	} \
+}while(0)
+
+#define MainComm_SendData(pData, size) HAL_UART_Transmit_IT(MAIN_COMM_SERIAL, pData, size, 0)
+#define DebugComm_SendData(pData, size) HAL_UART_Transmit(DEBUG_COMM_SERIAL, pData, size, 0)
+
+#define MainComm_PutChar(c) HAL_UART_Transmit_IT(MAIN_COMM_SERIAL, &c, 1, 0)
+#define MainComm_GetChar(pc) HAL_UART_Receive_IT(MAIN_COMM_SERIAL, pc, 1, 0)
+
+#define DebugComm_PutChar(c) HAL_UART_Transmit(DEBUG_COMM_SERIAL, &c, 1, 0)
+#define DebugComm_GetChar(pc) HAL_UART_Receive(DEBUG_COMM_SERIAL, pc, 1, 0)
 
 /* USER CODE END Private defines */
 
@@ -59,7 +85,7 @@ void MX_USART1_UART_Init(void);
 void MX_USART2_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+void iprintf(char *fmt,...) ;
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

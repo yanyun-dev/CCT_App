@@ -1,0 +1,79 @@
+Configuration	CCT_App
+STM32CubeMX 	4.19.0
+Date	06/07/2018
+MCU	STM32F103C8Tx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN0	ADC1_IN0	PA0-WKUP
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	PD0-OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	PD1-OSC_OUT
+SYS	Serial Wire	SYS_JTCK-SWCLK	PA14
+SYS	Serial Wire	SYS_JTMS-SWDIO	PA13
+SYS	SysTick	SYS_VS_Systick	VP_SYS_VS_Systick
+TIM1	Internal Clock	TIM1_VS_ClockSourceINT	VP_TIM1_VS_ClockSourceINT
+TIM1	Output Compare CH1 CH1N	TIM1_CH1	PA8
+TIM1	Output Compare CH1 CH1N	TIM1_CH1N	PB13
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+TIM2	Input Capture direct mode	TIM2_CH1	PA15
+TIM4	Internal Clock	TIM4_VS_ClockSourceINT	VP_TIM4_VS_ClockSourceINT
+TIM4	Output Compare CH1	TIM4_CH1	PB6
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PA2
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+5	PD0-OSC_IN	RCC_OSC_IN	
+6	PD1-OSC_OUT	RCC_OSC_OUT	
+10	PA0-WKUP	ADC1_IN0	
+12	PA2	USART2_TX	DebugCommTx
+13	PA3	USART2_RX	DebugCommRx
+14	PA4	GPIO_Input	S1
+15	PA5	GPIO_Input	S2
+16	PA6	GPIO_Input	S3
+17	PA7	GPIO_Input	S4
+18	PB0	GPIO_Input	S5
+19	PB1	GPIO_Input	S6
+20	PB2	GPIO_Input	S7
+21	PB10	GPIO_Input	S8
+22	PB11	GPIO_Input	S9
+26	PB13	TIM1_CH1N	CCT_L
+29	PA8	TIM1_CH1	CCT_H
+30	PA9	USART1_TX	MainCommTX
+31	PA10	USART1_RX	MainCommRx
+34	PA13	SYS_JTMS-SWDIO	
+37	PA14	SYS_JTCK-SWCLK	
+38	PA15	TIM2_CH1	
+42	PB6	TIM4_CH1	Brightness
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : CCT_App
+Project Folder : F:\CCT_Workspace\CCT_App\CCT_App
+Toolchain / IDE : MDK-ARM V5
+Firmware Package Name and Version : STM32Cube FW_F1 V1.4.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Copy all used libraries into the project folder
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : Yes
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+

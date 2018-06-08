@@ -74,7 +74,15 @@
 #define Brightness_Pin GPIO_PIN_6
 #define Brightness_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
-
+#define S1_PosMask (0x0)
+#define S2_PosMask (0x1)
+#define S3_PosMask (0x2)
+#define S4_PosMask (0x3)
+#define S5_PosMask (0x4)
+#define S6_PosMask (0x5)
+#define S7_PosMask (0x6)
+#define S8_PosMask (0x7)
+#define S9_PosMask (0x8)
 /* USER CODE END Private defines */
 
 /**

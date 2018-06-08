@@ -1,7 +1,7 @@
 [PreviousGenFiles]
-HeaderPath=F:/CCT_Workspace/CCT_App/Inc
+HeaderPath=F:/CCT_Workspace/CCT_App/CCT_App/Inc
 HeaderFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;gpio.h;crc.h;usart.h;iwdg.h;adc.h;tim.h;
-SourcePath=F:/CCT_Workspace/CCT_App/Src
+SourcePath=F:/CCT_Workspace/CCT_App/CCT_App/Src
 SourceFiles=stm32f1xx_it.h;stm32f1xx_hal_conf.h;main.h;stm32f1xx_it.c;stm32f1xx_hal_msp.c;main.c;gpio.h;crc.h;usart.h;gpio.c;crc.c;usart.c;iwdg.h;iwdg.c;adc.h;tim.h;adc.c;tim.c;
 
 [PreviousLibFiles]

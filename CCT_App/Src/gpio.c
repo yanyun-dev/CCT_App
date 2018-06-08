@@ -42,7 +42,7 @@
 /* Configure GPIO                                                             */
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
-
+uint16_t GPIO_Poll(void);
 /* USER CODE END 1 */
 
 /** Configure pins as 
@@ -79,7 +79,14 @@ void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 2 */
-
+uint16_t GPIO_Poll(void)
+{
+	return HAL_GPIO_ReadPin(S1_GPIO_Port, S1_Pin) << S1_PosMask | HAL_GPIO_ReadPin(S2_GPIO_Port, S2_Pin) << S2_PosMask | 
+		HAL_GPIO_ReadPin(S3_GPIO_Port, S3_Pin) << S3_PosMask | HAL_GPIO_ReadPin(S4_GPIO_Port, S4_Pin) << S4_PosMask |
+		HAL_GPIO_ReadPin(S5_GPIO_Port, S5_Pin) << S5_PosMask | HAL_GPIO_ReadPin(S6_GPIO_Port, S6_Pin) << S6_PosMask |
+		HAL_GPIO_ReadPin(S7_GPIO_Port, S7_Pin) << S7_PosMask | HAL_GPIO_ReadPin(S8_GPIO_Port, S8_Pin) << S8_PosMask | 
+		HAL_GPIO_ReadPin(S9_GPIO_Port, S9_Pin) << S9_PosMask;
+}
 /* USER CODE END 2 */
 
 /**

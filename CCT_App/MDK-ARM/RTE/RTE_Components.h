@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Component Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'Bootloader' 
- * Target:  'Bootloader' 
+ * Project: 'CCT_App' 
+ * Target:  'CCT_App' 
  */
 
 #ifndef RTE_COMPONENTS_H
